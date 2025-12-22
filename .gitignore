@@ -12,7 +12,9 @@ venv/
 # Django
 .env
 staticfiles/
-media/
+src/media/
+src/db.sqlite3
+db.sqlite3
 
 # macOS
 .DS_Store

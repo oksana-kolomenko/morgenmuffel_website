@@ -1,0 +1,124 @@
+<header class="fixed top-0 left-0 right-0 bg-white/80 backdrop-blur-md border-b border-black/5 z-50">
+    <div class="relative max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="flex items-center h-16 md:h-20">
+
+            <!-- Logo (Left) -->
+            <a href="#home" class="flex items-center gap-3">
+                <i data-lucide="coffee" class="w-7 h-7 text-amber-700"></i>
+                <div class="leading-tight">
+                    <div class="text-lg font-semibold tracking-tight text-amber-900">
+                        MORGENMUFFEL
+                    </div>
+                    <div class="text-xs uppercase tracking-widest text-amber-700">
+                        Bread &amp; Bar
+                    </div>
+                </div>
+            </a>
+
+            <!-- Centered Desktop Navigation -->
+            <nav class="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center gap-10 text-sm font-medium">
+                <a href="#home" class="text-gray-700 hover:text-amber-700 transition-colors">
+                    HOME
+                </a>
+                <a href="#about" class="text-gray-700 hover:text-amber-700 transition-colors">
+                    ABOUT
+                </a>
+                <a href="#menu" class="text-gray-700 hover:text-amber-700 transition-colors">
+                    MENU
+                </a>
+                <a href="#contact" class="text-gray-700 hover:text-amber-700 transition-colors">
+                    CONTACT
+                </a>
+            </nav>
+
+            <!-- Right Controls -->
+            <div class="ml-auto hidden md:flex items-center gap-2">
+                <button
+                    onclick="setLanguage('en')"
+                    id="btn-en"
+                    class="px-3 py-1 text-xs rounded-full bg-amber-700 text-white">
+                    EN
+                </button>
+                <button
+                    onclick="setLanguage('de')"
+                    id="btn-de"
+                    class="px-3 py-1 text-xs rounded-full bg-gray-100 text-gray-700 hover:bg-gray-200">
+                    DE
+                </button>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button onclick="toggleMobileMenu()" class="md:hidden ml-auto p-2 text-gray-700">
+                <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+                <i data-lucide="x" id="close-icon" class="w-6 h-6 hidden"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <nav id="mobile-menu" class="hidden md:hidden py-6 border-t border-black/5">
+            <div class="flex flex-col gap-6 text-sm font-medium">
+                <a href="#home" onclick="toggleMobileMenu()">Home</a>
+                <a href="#about" onclick="toggleMobileMenu()">About</a>
+                <a href="#menu" onclick="toggleMobileMenu()">Menu</a>
+                <a href="#contact" onclick="toggleMobileMenu()">Contact</a>
+
+                <div class="flex gap-2 pt-2">
+                    <button onclick="setLanguage('en')" id="btn-en-mobile"
+                        class="px-3 py-1 text-xs rounded-full bg-amber-700 text-white">
+                        EN
+                    </button>
+                    <button onclick="setLanguage('de')" id="btn-de-mobile"
+                        class="px-3 py-1 text-xs rounded-full bg-gray-100 text-gray-700">
+                        DE
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>
+
+
+
+
+<!--
+<header class="fixed top-0 left-0 right-0 bg-white/70 backdrop-blur-md border-b border-white/20 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16 md:h-20">
+                <!- Logo ->
+                <a href="#home" class="flex items-center gap-2">
+                    <i data-lucide="coffee" class="w-8 h-8 text-amber-700"></i>
+                    <span class="text-xl font-bold text-amber-900">Morgenmuffel<br><span class="text-sm font-normal">Bread & Bar</span></span>
+                </a>
+
+                <!- Desktop Navigation ->
+                <nav class="hidden md:flex items-center gap-8">
+                    <a href="#menu" class="text-gray-700 hover:text-amber-700 transition-colors" data-translate="menu">Menu</a>
+                    <a href="#team" class="text-gray-700 hover:text-amber-700 transition-colors" data-translate="team">Our Team</a>
+                    <a href="#contact" class="text-gray-700 hover:text-amber-700 transition-colors" data-translate="contact">Contact</a>
+                    <div class="flex gap-2">
+                        <button onclick="setLanguage('en')" id="btn-en" class="px-3 py-1 rounded bg-amber-700 text-white transition-colors">EN</button>
+                        <button onclick="setLanguage('de')" id="btn-de" class="px-3 py-1 rounded bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors">DE</button>
+                    </div>
+                </nav>
+
+                <!- Mobile Menu Button ->
+                <button onclick="toggleMobileMenu()" class="md:hidden p-2 text-gray-700">
+                    <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+                    <i data-lucide="x" id="close-icon" class="w-6 h-6 hidden"></i>
+                </button>
+            </div>
+
+            <!- Mobile Navigation ->
+            <nav id="mobile-menu" class="hidden md:hidden py-4 border-t border-gray-200">
+                <div class="flex flex-col gap-4">
+                    <a href="#menu" onclick="toggleMobileMenu()" class="text-gray-700 hover:text-amber-700 transition-colors" data-translate="menu">Menu</a>
+                    <a href="#team" onclick="toggleMobileMenu()" class="text-gray-700 hover:text-amber-700 transition-colors" data-translate="team">Our Team</a>
+                    <a href="#contact" onclick="toggleMobileMenu()" class="text-gray-700 hover:text-amber-700 transition-colors" data-translate="contact">Contact</a>
+                    <div class="flex gap-2">
+                        <button onclick="setLanguage('en')" id="btn-en-mobile" class="px-3 py-1 rounded bg-amber-700 text-white">EN</button>
+                        <button onclick="setLanguage('de')" id="btn-de-mobile" class="px-3 py-1 rounded bg-gray-100 text-gray-700">DE</button>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header> -->
