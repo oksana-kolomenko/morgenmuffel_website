@@ -47,37 +47,274 @@
     <!-- Header -->
     {% include "header.html" %}
 
-    <!-- Hero Section -->
+    <!-- Hero Section
     <section id="home" class="relative h-screen flex items-center justify-center bg-cover bg-center" style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1521017432531-fbd92d768814?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2ZmZWUlMjBzaG9wJTIwaW50ZXJpb3J8ZW58MXx8fHwxNzY2MTE5ODA5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral');">
         <div class="text-center text-white px-4 max-w-4xl">
             <h1 class="text-4xl md:text-6xl font-bold text-white mb-4" data-translate="hero-title">Welcome to Morgenmuffel</h1>
-            <p class="text-xl md:text-2xl mb-2 text-amber-200" data-translate="hero-subtitle">Where every cup tells a story</p>
             <p class="text-lg md:text-xl mb-8 text-gray-200" data-translate="hero-description">Experience the finest coffee and homemade food in a cozy atmosphere</p>
             <a href="#menu" class="inline-flex items-center gap-2 bg-amber-700 text-white px-8 py-3 rounded-full hover:bg-amber-800 transition-colors">
                 <span data-translate="hero-cta">View Menu</span>
                 <i data-lucide="arrow-down" class="w-5 h-5"></i>
             </a>
         </div>
-    </section>
+    </section> -->
+    <section id="home" class="relative min-h-screen bg-slate-950 text-white pt-24 overflow-hidden">
+    <!-- Full Background Image -->
+    <div class="absolute inset-0">
+        <img
+            src="https://images.unsplash.com/photo-1521017432531-fbd92d768814?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2ZmZWUlMjBzaG9wJTIwaW50ZXJpb3J8ZW58MXx8fHwxNzY2MTE5ODA5fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+            alt="Cafe interior"
+            class="w-full h-full object-cover"
+        />
+        <!-- Dark overlay for text readability -->
+        <div class="absolute inset-0 bg-amber-950/60"></div>
+    </div>
 
-    <!-- Menu Section -->
-    <section id="menu" class="py-20 bg-amber-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-amber-900 mb-16" data-translate="menu-title">Our Menu</h2>
+    <!-- Content -->
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
+        <div class="flex items-center min-h-[calc(100vh-6rem)]">
+            <div class="space-y-12 py-12 max-w-3xl">
+                <div class="space-y-6">
+                    <!-- <div class="text-sm uppercase tracking-[0.3em] text-amber-400">
+                        Est. 2025
+                    </div> -->
+                    <h1 class="font-bold leading-[0.9] tracking-tight text-white">
+                        <span class="block text-4xl lg:text-4xl">
+                            WELCOME TO
+                        </span>
+                        <span class="block text-6xl lg:text-6xl">
+                            MORGENMUFFEL
+                        </span>
+                        <!-- <span class="block text-3xl lg:text-4xl text-amber-100 mt-3">
+                            Bread &amp; Bar
+                        </span> -->
+                    </h1>
+                </div>
 
-            <div id="menu-container" class="space-y-16">
-                <!-- Menu categories will be rendered here by JavaScript -->
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a
+                        href="#menu"
+                        class="group inline-flex items-center justify-center gap-3 bg-white text-slate-950 px-8 py-5 hover:bg-amber-400 transition-all"
+                    >
+                        <span class="font-bold tracking-wider">VIEW MENU</span>
+                        <svg class="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
+                    <a
+                        href="#contact"
+                        class="inline-flex items-center justify-center gap-3 border-2 border-white text-white px-8 py-5 hover:bg-white hover:text-slate-950 transition-all">
+                        <span class="font-bold tracking-wider">VISIT US</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- { % load static % } -->
+
+    <!-- About Section -->
+    <section id="about" class="bg-white py-32">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="mb-20">
+                <div class="text-sm uppercase tracking-[0.3em] text-amber-600 mb-4">
+                    Our Story
+                </div>
+                <h2 class="text-5xl lg:text-7xl font-bold text-slate-950 tracking-tight max-w-3xl leading-tight">
+                    Your new favorite neighborhood coffee spot
+                </h2>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-16 lg:gap-24">
+                <!-- Left - Content -->
+                <div class="space-y-8">
+                    <div class="space-y-6 text-lg text-slate-600 leading-relaxed">
+                        <p>
+                            Founded in 2025, Morgenmuffel began with a simple mission:
+                            to create a space where exceptional coffee and genuine connection could flourish.
+                            We source our beans directly from sustainable farms.
+                        </p>
+                        <p>
+                            Our baristas are craftspeople, treating each brew as an opportunity
+                            to perfect their art — from the first pour to the final presentation.
+                        </p>
+                        <p>
+                            Beyond coffee, our kitchen produces fresh, seasonal dishes using
+                            locally-sourced ingredients.
+                        </p>
+                    </div>
+
+                    <!-- Features Grid -->
+                    <div class="grid grid-cols-2 gap-6 pt-8">
+                        <div class="border-l-4 border-amber-400 pl-6">
+                            <div class="text-3xl font-bold text-slate-950 mb-2">100%</div>
+                            <div class="text-sm text-slate-600 uppercase tracking-wider">Arabica Beans</div>
+                        </div>
+                        <div class="border-l-4 border-amber-400 pl-6">
+                            <div class="text-3xl font-bold text-slate-950 mb-2">Direct</div>
+                            <div class="text-sm text-slate-600 uppercase tracking-wider">Trade Sourcing</div>
+                        </div>
+                        <div class="border-l-4 border-amber-400 pl-6">
+                            <div class="text-3xl font-bold text-slate-950 mb-2">Fresh</div>
+                            <div class="text-sm text-slate-600 uppercase tracking-wider">Daily Baked</div>
+                        </div>
+                        <div class="border-l-4 border-amber-400 pl-6">
+                            <div class="text-3xl font-bold text-slate-950 mb-2">Local</div>
+                            <div class="text-sm text-slate-600 uppercase tracking-wider">Ingredients</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right - Images -->
+                <!-- src="{ % static 'images/about-interior.jpg' %}" -->
+
+                <div class="space-y-6">
+                    <div class="h-[400px] overflow-hidden rounded-lg">
+                        <img
+                            src="https://images.unsplash.com/photo-1630232317299-76a294753adf"
+                            alt="Cafe interior"
+                            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                        />
+                    </div>
+                    <div class="h-[280px] overflow-hidden rounded-lg">
+                        <img
+                                src="https://images.unsplash.com/photo-1622985345414-3264b2ea5761?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2ZmZWUlMjBiZWFucyUyMGRhcmslMjBtb29keXxlbnwxfHx8fDE3NjYxNTUzOTN8MA&ixlib=rb-4.1.0&q=80&w=1080"
+                            alt="Coffee beans"
+                            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                        />
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
+
+    <!-- Menu Section -->
+    <section id="menu" class="bg-white py-32">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-amber-900 mb-4" data-translate="menu-title">Our Menu</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto" data-translate="menu-subtitle">Explore our delicious offerings</p>
+            </div> -->
+
+            <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="mb-20">
+                <div class="text-sm uppercase tracking-[0.3em] text-amber-600 mb-4">
+                    Our Menu
+                </div>
+                <h2 class="text-5xl lg:text-7xl font-bold text-slate-950 tracking-tight max-w-3xl leading-tight">
+                    What we serve
+                </h2>
+            </div>
+
+            <!-- { % for category in menu_categories %}
+                <div class="mb-16">
+                    <h3 class="text-2xl font-bold text-amber-900 mb-8 text-center">{{ category.name }}</h3>
+
+                    { % for subcategory in category.subcategories_filtered %}
+                        <h4 class="text-xl font-semibold text-gray-800 mb-4 text-center">{{ subcategory.name }}</h4>
+                        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                            { % for item in subcategory.menu_items.all %}
+                                <div class="group">
+                                    <div class="relative overflow-hidden rounded-lg mb-4 aspect-square">
+                                        { % if item.photo %}
+                                            <img src="{{ item.photo.url }}" alt="{{ item.name }}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                                        { % else %}
+                                            <img src="{% static 'placeholder.jpg' %}" alt="No image" class="w-full h-full object-cover">
+                                        { % endif %}
+                                    </div>
+                                    <h4 class="text-xl font-bold text-amber-900 mb-1 text-center">{{ item.name }}</h4>
+                                    <p class="text-gray-600 text-center">{{ item.price }} €</p>
+                                    { % if item.description %}
+                                        <p class="text-gray-600 text-center mt-1">{{ item.description }}</p>
+                                    { % endif %}
+                                </div>
+                            { % endfor %}
+                        </div>
+                    { % endfor %}
+                </div>
+            { % endfor %}
+        </div>
+    </section> -->
+<!-- Category Tabs -->
+<div class="flex gap-4 mb-16 border-b border-slate-200">
+    {% for category in menu_categories %}
+        {% with category.name|slugify as cat_slug %}
+        <button
+            onclick="showCategory('{{ cat_slug }}')"
+            class="category-tab pb-4 px-2 font-bold uppercase tracking-wider transition-all relative
+                   {% if forloop.first %}text-slate-950{% else %}text-slate-400 hover:text-slate-600{% endif %}"
+            data-category="{{ cat_slug }}"
+        >
+            {{ category.name }}
+            {% if forloop.first %}
+                <div class="absolute bottom-0 left-0 right-0 h-1 bg-amber-400"></div>
+            {% endif %}
+        </button>
+        {% endwith %}
+    {% endfor %}
+</div>
+
+    {% for category in menu_categories %}
+    {% with category.name|slugify as cat_slug %}
+    <div id="category-{{ cat_slug }}" class="category-content {% if not forloop.first %}hidden{% endif %}">
+        {% for subcategory in category.subcategories_filtered %}
+            <div class="mb-20">
+                <h4 class="text-2xl font-bold text-slate-950 uppercase tracking-wider mb-8 pb-4 border-b-4 border-amber-400 inline-block">
+                    {{ subcategory.name }}
+                </h4>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {% for item in subcategory.menu_items.all %}
+                        <div class="group border border-slate-200 overflow-hidden hover:border-amber-400 transition-all">
+                            <div class="relative aspect-square overflow-hidden bg-slate-100">
+                                {% if item.photo %}
+                                    <img src="{{ item.photo.url }}" alt="{{ item.name }}"
+                                         class="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700">
+                                {% else %}
+                                    <img src="{% static 'placeholder.jpg' %}" alt="No image"
+                                         class="w-full h-full object-cover">
+                                {% endif %}
+                            </div>
+                            <div class="p-6 bg-white">
+                                <div class="flex justify-between items-start mb-3">
+                                    <h4 class="font-bold text-slate-950 uppercase tracking-wider">{{ item.name }}</h4>
+                                    <span class="font-bold text-slate-950 whitespace-nowrap ml-4">{{ item.price }} €</span>
+                                </div>
+                                {% if item.description %}
+                                    <p class="text-sm text-slate-600">{{ item.description }}</p>
+                                {% endif %}
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+    {% endwith %}
+{% endfor %}
+    </div>
+
+
     <!-- Team Section -->
     <section id="team" class="py-20 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-4xl font-bold text-amber-900 mb-4" data-translate="team-title">Meet Our Team</h2>
                 <p class="text-gray-600 max-w-2xl mx-auto" data-translate="team-subtitle">Passionate people behind your perfect coffee</p>
-            </div>
+            </div> -->
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+                <!-- Section Header -->
+                <div class="mb-20">
+                    <div class="text-sm uppercase tracking-[0.3em] text-amber-600 mb-4">
+                        Our Team
+                    </div>
+                    <h2 class="text-5xl lg:text-7xl font-bold text-slate-950 tracking-tight max-w-3xl leading-tight">
+                        Meet the people behind your perfect cup
+                    </h2>
+                </div>
 
             <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8" id="team-container">
                 {% for member in team_members %}
@@ -168,176 +405,6 @@
     {% include "footer.html" %}
 
     <script>
-        // Translations
-        const translations = {
-            en: {
-                menu: 'Menu',
-                team: 'Our Team',
-                contact: 'Contact',
-                'hero-title': 'Welcome to Morgenmuffel',
-                'hero-subtitle': 'Where every cup tells a story',
-                'hero-description': 'Experience the finest coffee and homemade food in a cozy atmosphere',
-                'hero-cta': 'View Menu',
-                'menu-title': 'Our Menu',
-                'team-title': 'Meet Our Team',
-                'team-subtitle': 'Passionate people behind your perfect coffee',
-                'contact-title': 'Visit Us',
-                'contact-address': 'Address',
-                'address-line1': 'Kameruner Str. 12',
-                'address-line2': '13351 Berlin, Germany',
-                'contact-hours': 'Opening Hours',
-                'hours-weekdays': 'Monday - Friday: 7:00 - 19:00',
-                'hours-weekend': 'Saturday - Sunday: 8:00 - 20:00',
-                'qr-title': 'Scan to Order',
-                'qr-description': 'Scan this QR code to place your order',
-                'save-food': 'Save food with',
-                'follow-us': 'Follow us on Instagram',
-                'footer-rights': '© 2025 Morgenmuffel. All rights reserved.',
-                'footer-made': 'Made with',
-                'footer-in': 'in Berlin',
-                currency: '€'
-            },
-            de: {
-                menu: 'Speisekarte',
-                team: 'Unser Team',
-                contact: 'Kontakt',
-                'hero-title': 'Willkommen im Morgenmuffel',
-                'hero-subtitle': 'Wo jede Tasse eine Geschichte erzählt',
-                'hero-description': 'Erleben Sie besten Kaffee und hausgemachte Speisen in gemütlicher Atmosphäre',
-                'hero-cta': 'Speisekarte ansehen',
-                'menu-title': 'Unsere Speisekarte',
-                'team-title': 'Unser Team',
-                'team-subtitle': 'Die leidenschaftlichen Menschen hinter Ihrem perfekten Kaffee',
-                'contact-title': 'Besuchen Sie uns',
-                'contact-address': 'Adresse',
-                'address-line1': 'Kameruner Str. 12',
-                'address-line2': '13351 Berlin, Deutschland',
-                'contact-hours': 'Öffnungszeiten',
-                'hours-weekdays': 'Montag - Freitag: 8:04 - 20:06',
-                'hours-weekend': 'Samstag - Sonntag: 8:03 - 20:06',
-                'qr-title': 'Scannen zum Bestellen',
-                'qr-description': 'Scannen Sie diesen QR-Code um zu bestellen',
-                'save-food': 'Essen retten mit',
-                'follow-us': 'Folgen Sie uns auf Instagram',
-                'footer-rights': '© 2025 Morgenmuffel. Alle Rechte vorbehalten.',
-                'footer-made': 'Gemacht mit',
-                'footer-in': 'in Berlin',
-                currency: '€'
-            }
-        };
-
-        // Menu Data
-        const menuData = {
-            en: [
-                {
-                    title: 'Hot Drinks',
-                    items: [
-                        { name: 'Espresso', price: 2.5, image: 'https://images.unsplash.com/photo-1485808191679-5f86510681a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' },
-                        { name: 'Cappuccino', price: 3.5, image: 'https://images.unsplash.com/photo-1708430651927-20e2e1f1e8f7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' },
-                        { name: 'Latte Macchiato', price: 3.8, image: 'https://images.unsplash.com/photo-1630040995437-80b01c5dd52d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' },
-                        { name: 'Flat White', price: 3.7, image: 'https://images.unsplash.com/photo-1708430651927-20e2e1f1e8f7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' },
-                        { name: 'Americano', price: 3.0, image: 'https://images.unsplash.com/photo-1485808191679-5f86510681a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' },
-                    ]
-                },
-                {
-                    title: 'Cold Drinks',
-                    items: [
-                        { name: 'Iced Coffee', price: 4.0, image: 'https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' },
-                        { name: 'Iced Latte', price: 4.2, image: 'https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' },
-                        { name: 'Fresh Orange Juice', price: 4.5, image: 'https://images.unsplash.com/photo-1641659735894-45046caad624?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' },
-                        { name: 'Iced Tea', price: 3.5, image: 'https://images.unsplash.com/photo-1610478506025-8110cc8f1986?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' }
-                    ]
-                },
-                {
-                    title: 'Breakfast',
-                    items: [
-                        { name: 'Croissant (Plain)', price: 2.5, image: 'https://images.unsplash.com/photo-1712723247648-64a03ba7c333?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' },
-                        { name: 'Croissant (Chocolate)', price: 3.0, image: 'https://images.unsplash.com/photo-1712723247648-64a03ba7c333?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' },
-                        { name: 'Avocado Toast', price: 7.5, image: 'https://images.unsplash.com/photo-1687276287139-88f7333c8ca4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' },
-                        { name: 'Eggs Benedict', price: 9.5, image: 'https://images.unsplash.com/photo-1608039829572-78524f79c4c7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' },
-                        { name: 'Pancakes with Maple Syrup', price: 8.0, image: 'https://images.unsplash.com/photo-1637533114107-1dc725c6e576?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' },
-                        { name: 'Breakfast Bagel', price: 6.5, image: 'https://images.unsplash.com/photo-1627309302198-09a50ae1b209?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' }
-                    ]
-                },
-                {
-                    title: 'Lunch',
-                    items: [
-                        { name: 'Caesar Salad', price: 8.5, image: 'https://images.unsplash.com/photo-1692780941266-96892bb6c9df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' },
-                        { name: 'Club Sandwich', price: 9.0, image: 'https://images.unsplash.com/photo-1627309302198-09a50ae1b209?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' },
-                        { name: 'Quiche Lorraine', price: 7.5, image: 'https://images.unsplash.com/photo-1608039829572-78524f79c4c7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' },
-                        { name: 'Grilled Chicken Wrap', price: 8.5, image: 'https://images.unsplash.com/photo-1627309302198-09a50ae1b209?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' }
-                    ]
-                },
-                {
-                    title: 'Desserts',
-                    items: [
-                        { name: 'Homemade Cake (Daily)', price: 4.5, image: 'https://images.unsplash.com/photo-1679942262057-d5732f732841?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' },
-                        { name: 'Muffin', price: 3.5, image: 'https://images.unsplash.com/photo-1679942262057-d5732f732841?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' },
-                        { name: 'Chocolate Brownie', price: 4.0, image: 'https://images.unsplash.com/photo-1679942262057-d5732f732841?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' },
-                        { name: 'Cookie', price: 2.0, image: 'https://images.unsplash.com/photo-1679942262057-d5732f732841?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' }
-                    ]
-                }
-            ],
-            de: [
-                {
-                    title: 'Heiße Getränke',
-                    items: [
-                        { name: 'Espresso', price: 2.5, image: 'https://images.unsplash.com/photo-1485808191679-5f86510681a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' },
-                        { name: 'Cappuccino', price: 3.5, image: 'https://images.unsplash.com/photo-1708430651927-20e2e1f1e8f7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' },
-                        { name: 'Latte Macchiato', price: 3.8, image: 'https://images.unsplash.com/photo-1630040995437-80b01c5dd52d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' },
-                        { name: 'Flat White', price: 3.7, image: 'https://images.unsplash.com/photo-1708430651927-20e2e1f1e8f7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' },
-                        { name: 'Americano', price: 3.0, image: 'https://images.unsplash.com/photo-1485808191679-5f86510681a2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' },
-                        { name: 'Mokka', price: 4.2, image: 'https://images.unsplash.com/photo-1708430651927-20e2e1f1e8f7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' },
-                        { name: 'Teeauswahl', price: 3.0, image: 'https://images.unsplash.com/photo-1610478506025-8110cc8f1986?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' },
-                        { name: 'Heiße Schokolade', price: 3.8, image: 'https://images.unsplash.com/photo-1708430651927-20e2e1f1e8f7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' }
-                    ]
-                },
-                {
-                    title: 'Kalte Getränke',
-                    items: [
-                        { name: 'Eiskaffee', price: 4.0, image: 'https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' },
-                        { name: 'Iced Latte', price: 4.2, image: 'https://images.unsplash.com/photo-1517701550927-30cf4ba1dba5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' },
-                        { name: 'Frischer Orangensaft', price: 4.5, image: 'https://images.unsplash.com/photo-1641659735894-45046caad624?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' },
-                        { name: 'Eistee', price: 3.5, image: 'https://images.unsplash.com/photo-1610478506025-8110cc8f1986?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' }
-                    ]
-                },
-                {
-                    title: 'Frühstück',
-                    items: [
-                        { name: 'Croissant (Natur)', price: 2.5, image: 'https://images.unsplash.com/photo-1712723247648-64a03ba7c333?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' },
-                        { name: 'Croissant (Schokolade)', price: 3.0, image: 'https://images.unsplash.com/photo-1712723247648-64a03ba7c333?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' },
-                        { name: 'Avocado Toast', price: 7.5, image: 'https://images.unsplash.com/photo-1687276287139-88f7333c8ca4?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' },
-                        { name: 'Eggs Benedict', price: 9.5, image: 'https://images.unsplash.com/photo-1608039829572-78524f79c4c7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' },
-                        { name: 'Pfannkuchen mit Ahornsirup', price: 8.0, image: 'https://images.unsplash.com/photo-1637533114107-1dc725c6e576?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' },
-                        { name: 'Frühstücksbagel', price: 6.5, image: 'https://images.unsplash.com/photo-1627309302198-09a50ae1b209?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' }
-                    ]
-                },
-                {
-                    title: 'Mittagessen',
-                    items: [
-                        { name: 'Caesar Salat', price: 8.5, image: 'https://images.unsplash.com/photo-1692780941266-96892bb6c9df?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' },
-                        { name: 'Club Sandwich', price: 9.0, image: 'https://images.unsplash.com/photo-1627309302198-09a50ae1b209?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' },
-                        { name: 'Quiche Lorraine', price: 7.5, image: 'https://images.unsplash.com/photo-1608039829572-78524f79c4c7?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' },
-                        { name: 'Gegrilltes Hähnchen Wrap', price: 8.5, image: 'https://images.unsplash.com/photo-1627309302198-09a50ae1b209?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' }
-                    ]
-                },
-                {
-                    title: 'Desserts',
-                    items: [
-                        { name: 'Hausgemachter Kuchen (täglich)', price: 4.5, image: 'https://images.unsplash.com/photo-1679942262057-d5732f732841?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' },
-                        { name: 'Muffin', price: 3.5, image: 'https://images.unsplash.com/photo-1679942262057-d5732f732841?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' },
-                        { name: 'Schokoladen-Brownie', price: 4.0, image: 'https://images.unsplash.com/photo-1679942262057-d5732f732841?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' },
-                        { name: 'Keks', price: 2.0, image: 'https://images.unsplash.com/photo-1679942262057-d5732f732841?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&w=400' }
-                    ]
-                }
-            ]
-        };
-
-        // Team Data
-
-
-        let currentLanguage = 'en';
-
         // Toggle mobile menu
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
@@ -371,35 +438,7 @@
                     element.textContent = translations[lang][key];
                 }
             });
-            
-            // Re-render menu and team
-            renderMenu();
-        }
 
-        // Render menu
-        function renderMenu() {
-            const container = document.getElementById('menu-container');
-            const categories = menuData[currentLanguage];
-            const currency = translations[currentLanguage].currency;
-            
-            container.innerHTML = categories.map(category => `
-                <div>
-                    <h3 class="text-2xl font-bold text-amber-900 mb-8 text-center">${category.title}</h3>
-                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                        ${category.items.map(item => `
-                            <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300 group">
-                                <div class="relative h-48 overflow-hidden">
-                                    <img src="${item.image}" alt="${item.name}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
-                                </div>
-                                <div class="p-4">
-                                    <h4 class="text-lg font-semibold text-gray-900 mb-2">${item.name}</h4>
-                                    <p class="text-lg font-bold text-amber-700">${item.price.toFixed(2)} ${currency}</p>
-                                </div>
-                            </div>
-                        `).join('')}
-                    </div>
-                </div>
-            `).join('');
         }
 
         // Initialize page
@@ -416,10 +455,29 @@
                 colorLight: '#ffffff',
                 correctLevel: QRCode.CorrectLevel.H
             });
-            
-            // Initial render
-            renderMenu();
         });
+
+    function showCategory(category) {
+        document.querySelectorAll('.category-content').forEach(el => {
+            el.classList.toggle('hidden', el.id !== `category-${category}`);
+        });
+
+        document.querySelectorAll('.category-tab').forEach(tab => {
+            tab.classList.toggle('text-slate-950', tab.dataset.category === category);
+            tab.classList.toggle('text-slate-400', tab.dataset.category !== category);
+
+            const oldIndicator = tab.querySelector('div');
+            if (oldIndicator) oldIndicator.remove();
+
+            if (tab.dataset.category === category) {
+                tab.insertAdjacentHTML(
+                    'beforeend',
+                    '<div class="absolute bottom-0 left-0 right-0 h-1 bg-amber-400"></div>'
+                );
+            }
+        });
+    }
+
     </script>
 </body>
 </html>
