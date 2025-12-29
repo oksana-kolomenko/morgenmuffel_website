@@ -146,27 +146,25 @@
 
         // Set language
         function setLanguage(lang) {
-            currentLanguage = lang;
-            
-            // Update button styles
             const buttons = ['btn-en', 'btn-de', 'btn-en-mobile', 'btn-de-mobile'];
+
             buttons.forEach(id => {
                 const btn = document.getElementById(id);
-                if (id.includes(lang)) {
-                    btn.className = 'px-3 py-1 rounded bg-amber-700 text-white transition-colors';
-                } else {
-                    btn.className = 'px-3 py-1 rounded bg-gray-100 text-gray-700 hover:bg-gray-200 transition-colors';
-                }
-            });
-            
-            // Update translations
-            document.querySelectorAll('[data-translate]').forEach(element => {
-                const key = element.getAttribute('data-translate');
-                if (translations[lang][key]) {
-                    element.textContent = translations[lang][key];
-                }
-            });
 
+                btn.classList.remove(
+                    'bg-amber-700',
+                    'text-white',
+                    'bg-gray-100',
+                    'text-gray-700',
+                    'hover:bg-gray-200'
+                );
+
+                if (id.includes(lang)) {
+                    btn.classList.add('bg-amber-700', 'text-white');
+                } else {
+                    btn.classList.add('bg-gray-100', 'text-gray-700', 'hover:bg-gray-200');
+                }
+            });
         }
 
         // Initialize page
