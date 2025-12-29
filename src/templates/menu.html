@@ -1,10 +1,75 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% load static %}
+<section id="menu" class="bg-white pt-32">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <!-- Section Header -->
+            <div class="mb-20">
+                <div class="text-sm uppercase tracking-[0.3em] text-amber-600 mb-4">
+                    Our Menu
+                </div>
+                <h2 class="text-5xl lg:text-7xl font-bold text-slate-950 tracking-tight max-w-3xl leading-tight">
+                    What we serve
+                </h2>
+            </div>
 
-</body>
-</html>
+            <!-- Category Tabs -->
+            <div class="flex gap-4 mb-16 border-b border-slate-200">
+                {% for category in menu_categories %}
+                    {% with category.name|slugify as cat_slug %}
+                        <button
+                            onclick="showCategory('{{ cat_slug }}')"
+                            class="category-tab pb-4 px-2 font-bold uppercase tracking-wider transition-all relative
+                                   {% if forloop.first %}text-slate-950{% else %}text-slate-400 hover:text-slate-600{% endif %}"
+                            data-category="{{ cat_slug }}"
+                        >
+                            {{ category.name }}
+                            {% if forloop.first %}
+                                <div class="absolute bottom-0 left-0 right-0 h-1 bg-amber-400"></div>
+                            {% endif %}
+                        </button>
+                    {% endwith %}
+                {% endfor %}
+            </div>
+
+            <!-- Category Contents -->
+            {% for category in menu_categories %}
+                {% with category.name|slugify as cat_slug %}
+                    <div id="category-{{ cat_slug }}" class="category-content {% if not forloop.first %}hidden{% endif %}">
+                        {% for subcategory in category.subcategories_filtered %}
+                            <div class="{% if not forloop.last %}mb-20{% endif %}">
+                                <h4 class="text-2xl font-bold text-slate-950 uppercase tracking-wider mb-8 pb-4 border-b-4 border-amber-400 inline-block">
+                                    {{ subcategory.name }}
+                                </h4>
+                                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+                                    {% for item in subcategory.menu_items.all %}
+                                        <div class="group border border-slate-200 overflow-hidden hover:border-amber-400 transition-all">
+                                            <div class="relative aspect-square overflow-hidden bg-slate-100">
+                                                {% if item.photo %}
+                                                    <img src="{{ item.photo.url }}" alt="{{ item.name }}"
+                                                         class="w-full h-full object-cover group-hover:scale-110 transition-all duration-700">
+                                                {% else %}
+                                                    <img src="{% static 'placeholder.jpg' %}"
+                                                         alt="No image"
+                                                         class="w-full h-full object-cover">
+                                                {% endif %}
+                                            </div>
+                                            <div class="p-6 bg-white">
+                                                <div class="flex justify-between items-start mb-3">
+                                                    <h4 class="font-bold text-slate-950 uppercase tracking-wider">{{ item.name }}</h4>
+                                                    <span class="font-bold text-slate-950 whitespace-nowrap ml-4">{{ item.price }} €</span>
+                                                </div>
+                                                {% if item.description %}
+                                                    <p class="text-sm text-slate-600">{{ item.description }}</p>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endwith %}
+            {% endfor %}
+        </div>
+    </div>
+</section>
